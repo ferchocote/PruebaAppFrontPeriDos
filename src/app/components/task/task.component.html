@@ -1,0 +1,14 @@
+<h2>Lista de Tareas</h2>
+
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <input formControlName="title" placeholder="Título" />
+  <input formControlName="description" placeholder="Descripción" />
+  <button type="submit">Agregar Tarea</button>
+</form>
+
+<ul>
+  <li *ngFor="let task of tasks">
+    <strong>{{ task.title }}</strong>: {{ task.description }}
+  </li>
+</ul>
+

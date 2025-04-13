@@ -1,0 +1,15 @@
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label>Usuario</label>
+        <input formControlName="user" type="text" />
+      </div>
+      <div>
+        <label>Contraseña</label>
+        <input formControlName="password" type="password" />
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+    </form>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
